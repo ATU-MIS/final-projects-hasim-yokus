@@ -1,0 +1,28 @@
+1-)ARIZA BİLDİRİM SENARYOSU    
+     Kullanım Durumu (Use Case),  Adımlar,  İlişki
+UC1: Report Issue (Arıza Bildir),"1. Resident, arızanın açıklamasını ve konumunu girer.  2. Sistem, arızayı kaydeder ve durumu ""Beklemede"" olarak ayarlar.",<<includes>> UC2
+UC2: Upload Issue Photo (Fotoğraf Yükle),"Resident, arıza bildirimi sırasında sorunu kanıtlamak için fotoğraf yükler.",<<includes>> UC1
+UC5: View Issue Status (Arıza Durumunu Görüntüle),"Arıza bildirimi tamamlandıktan sonra Resident, dilediği zaman sistemdeki arızasının durumunu (Beklemede, Tamirde, Tamamlandı) kontrol edebilir.",<<extends>> UC1
+
+2-)FİNANSAL İŞLEMLER SENARYOSU
+      Kullanım Durumu (Use Case),  Adımlar
+UC3: Pay Monthly Fee (Aidat Öde),"1. Resident, ödenmemiş aylık aidat tutarını görüntüler.  2. Resident, ödeme yöntemini seçerek işlemi tamamlar.  3. Sistem, ödemeyi kaydeder ve Sakin'in bakiyesini günceller."
+UC4: View Balance (Bakiyeyi Görüntüle),"Resident, mevcut borç/alacak bakiyesini ve geçmiş ödeme dökümlerini görüntüler."
+
+
+3-)YÖNETİCİ GÖREVLERİ SENARYOSU
+    Kullanım Durumu (Use Case),  Adımlar,  İlişki
+UC6: Assign Technical Service (Teknik Servis Ata),"1. Manager, yeni bildirilen bir arızayı inceler.  2. Uygun bir TechnicalService seçer ve arızayı onlara atar.",<<includes>> UC7
+UC7: Update Issue Status (Arıza Durumunu Güncelle),"Manager, arızanın ilerlemesini (örneğin ""İncelemede"" veya ""İptal Edildi"" gibi) manuel olarak günceller.",
+UC8: Add Monthly Fee (Aidat Ekle),"Manager, her ay düzenli aidat tutarını veya ek masrafları tüm Sakinlerin hesaplarına borç olarak işler.",
+UC9: Apply Penalty (Ceza Uygula),"Kural ihlali durumunda Manager, ilgili Resident'a ceza puanı ekler.",
+UC11: View Emergency Issues (Acil Arızaları Görüntüle),"Manager, öncelikli veya acil olarak etiketlenmiş arıza bildirimlerini hızla filtreleyerek acil eyleme geçer.",
+
+
+4-)TEKNİK SERVİS SENARYOSU
+    Kullanım Durumu (Use Case),  Adımlar,  İlişki
+UC10: Fix Issue (Arızayı Gider),"1. TechnicalService, Manager tarafından atanan arızayı kabul eder.  2. Arızayı yerinde onarır.  3. İşlem tamamlandığında, arızanın durumunu ""Giderildi"" olarak günceller.",<<extends>> UC7
+
+
+
+
